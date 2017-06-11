@@ -1,5 +1,5 @@
 from math import *
-from numpy import np
+import numpy as np
 from gaussWeights import *
 
 def getWeights(degree):
@@ -13,9 +13,8 @@ def gaussianQuadrature(f,a,b,n):
 
     area = 0
     for i in range(n):
-
         # Definição dos pesos
-        W = gaussWeights(n)
+        W = getWeights(n)
         w1 = W[i][0]
         w2 = W[i][1]
 
@@ -28,14 +27,16 @@ def gaussianQuadrature(f,a,b,n):
     return area
 
 
-def f1(x):
-    return exp(-x**2)
 
-def f2(x):
-    return 2 + x + 2 * x**2
 
-a = 1
-b = 3
-n = 7
-
-gaussianQuadrature(f1,a,b,n)
+# def f1(x):
+#     return exp(-x**2)
+#
+# def f2(x):
+#     return 2 + x + 2 * x**2
+#
+# a = 1
+# b = 3
+# n = 7
+#
+# gaussianQuadrature(f1,a,b,n)

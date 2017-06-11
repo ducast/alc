@@ -2,14 +2,17 @@ from gaussianQuadrature import *
 from polinomialIntegration import *
 
 # Parâmetros
-def f1(t,fx):
-    return -2 * t * fx**2
+def f1(x):
+    return x**3/4 + x/2.0
 
 a = 0
-b = 2
-n = 2
-
+b = 4
+n = 4
 # Escolha do método [polinomialIntegration, gaussianQuadrature]
-method = polinomialIntegration
+# method = polinomialIntegration
+#
+# method(f1,a,b,n)
+polinomialIntegration(f1,a,b,n)
 
-method(f1,x0,a,b,delta)
+n=2
+gaussianQuadrature(f1,a,b,n)

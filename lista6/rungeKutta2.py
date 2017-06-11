@@ -9,16 +9,16 @@ def rungeKutta2(f,x0,a,b,delta):
         K2 = f(tk+delta, xk+delta*K1)
         xk += delta/2.0*(K1+K2)
         tk += delta
+        print (tk,xk)
     print ("Valor encontrado: \n",xk)
     return xk
 
-# def f1(t,fx):
-#     return -2 * t * fx**2
-#
-# x0 = 1
-# a = 0
-# b = 2
-# delta = 0.1
-#
-#
-# rungeKutta2(f1,x0,a,b,delta)
+def f1(t,fx):
+    return -10*t*fx**2
+
+x0 = 2
+a = 0
+b = 1
+delta = 0.1
+
+rungeKutta2(f1,x0,a,b,delta)

@@ -2,10 +2,13 @@ from math import *
 import numdifftools as nd
 
 def rootNewton(f,x0,max_it,tol):
-    print ("==== Método de Newtown para Raízes ====")
+    print ("==== Método de Newton para Raízes ====")
     for it in range(max_it):
         x = x0 - f(x0) / nd.Derivative(f)(x0)
         tolk = abs(x - x0)
+
+        print (int(it),round(x,2))
+
         if tolk < tol:
             print ("Convergiu para %d iterações.\nXi = "%(it+1),x)
             return x

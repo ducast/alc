@@ -7,14 +7,17 @@ def rootBisect(f,a,b,tol):
         it += 1
         xi = (a + b) / 2.0
         fi = f(xi)
-        if fi > 0.0:
+
+        print (int(it),round(xi,2))
+
+        if fi < 0.0:
             b = xi
         else:
             a = xi
 
     print ("Convergiu para %d iterações.\nXi = "%it, xi)
     return xi
-# 
+#
 # def f1(x):
 #     return x**2-4*cos(x)
 # f=f1

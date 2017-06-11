@@ -1,7 +1,7 @@
 import numpy as np
 import numdifftools as nd
 
-def linearRegression(Fx,x0,max_it,tol):
+def functionAdjustment(Fx,x0,max_it,tol):
     print ("==== Método de Newton para Matrizes Multi Dimensionais ====")
     Jx = []
     for f in Fx:
@@ -23,7 +23,7 @@ def linearRegression(Fx,x0,max_it,tol):
         for j in Jx[1:]:
             Jk = np.vstack([Jk, j(last_x)]) # append
 
-        # Cálculo de Xk
+        # Cálculo de deltaX e Xk
         Jk_T = Jk.transpose()
         deltaX = -1 * np.linalg.inv(Jk_T * Jk) * Jk_T * Fk
         Xk = np.matrix(last_x) + deltaX.transpose()
@@ -46,4 +46,4 @@ def linearRegression(Fx,x0,max_it,tol):
 # x0 = [2,3]
 # max_it = 10000
 # tol = 10**(-4)
-# linearRegression(f,x0,max_it,tol)
+# functionAdjustment(f,x0,max_it,tol)

@@ -28,6 +28,8 @@ def newtonMultiDim(Fx,x0,max_it,tol):
         deltaX = -1 * Jk_1 * Fk
         Xk = np.matrix(last_x) + deltaX.transpose()
 
+        # print(int(it), Xk)
+
         # Verificação da tolerância
         tolk = np.linalg.norm(deltaX)/np.linalg.norm(Xk)
         if tolk < tol:
